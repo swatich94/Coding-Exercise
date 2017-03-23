@@ -19,6 +19,8 @@ public class NuClass {
 		person_markup=((b_markup*price_people*1.2)/100);
 		//categories mark up
 		if(category.equals("pharmaceuticals") || category.equals("drugs")){ctg_markup=((b_markup*7.5)/100);}
+		else if(category.equals("food")){ctg_markup=((b_markup*13)/100);}
+		else if(category.equals("electronics")){ctg_markup=((b_markup*2)/100);}
 		else{ctg_markup = 0.0;}
 		
 		double final_amount =  b_markup+person_markup+ctg_markup;
