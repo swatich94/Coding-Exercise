@@ -34,23 +34,34 @@ public class NuClass {
 	}
 	public static void main(String args[])
 	{
-		
+		while(true)
+		{
 		Scanner a=new Scanner(System.in);
 		String b = a.nextLine();
 		b=b.replace(" ","");
 		b=b.replaceFirst(",","");
 		String price = null,person = null,category = null;
+		
+		try{
 		String[] c = b.split(","); 
 	    price =c[0];
 	    person =c[1];
 	    category=c[2];
-		Scanner inp = new Scanner(System.in);
+	    Scanner inp = new Scanner(System.in);
 	    System.out.println("Enter number of packages to be delivered");
 	    int quant = inp.nextInt();
 	    double amt=mark_up(price,person,category);
 	    double final_price = quantity(amt,quant);
 	   
 		System.out.println(" "+final_price);
+		break;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Enter amount with comma");
+			continue;
+		}
 	}
 
+}
 }
